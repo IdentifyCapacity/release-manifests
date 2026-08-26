@@ -3,24 +3,24 @@
   "target_app": "iclab-platform",
   "package_type": "bundle",
   "platform": "any",
-  "version": "3.0.77",
+  "version": "3.0.78",
   "channel": "stable",
-  "released_at": "2026-08-20T11:45:00Z",
+  "released_at": "2026-08-26T13:00:00Z",
   "min_from_version": "3.0.0",
-  "min_updater_version": "3.0.75",
-  "changelog_url": "https://identifycapacity.github.io/release-manifests/changelog/3.0.77.html",
+  "min_updater_version": "3.0.77",
+  "changelog_url": "https://iclabtech.github.io/release-manifests/changelog/3.0.78.html",
   "critical_security": false,
   "payload_refs": [],
   "components": [
     {
       "name": "iclab-platform",
       "service": null,
-      "files": "ghcr.io/identifycapacity/iclab-platform:3.0.77",
+      "files": "ghcr.io/iclabtech/iclab-platform:3.0.78",
       "install_target": "docker://iclab-platform"
     }
   ],
   "db_migrations": true,
   "rollback_supported": true,
   "estimated_size_mb": 800,
-  "release_notes": "v3.0.77: When something stops working, ICLab now says so. Deterrents that resolve no devices are recorded as failures naming the camera and the reason, instead of reporting success over a no-op - the cause of sirens and floodlights that appeared to fire but did nothing. Zone-aware alerts now resolve their devices during the grace period, and the whole deterrent set is dispatched as one burst. Host disk pressure and camera clock drift now reach the admin messenger and, where email is configured, arrive by email. Watchdog notifications appear as readable sentences rather than raw technical data. Support bundles now capture the log that carries an ingest failure, so it is visible without shell access. Ubiquiti Protect gateways let you choose exactly which devices to import, and a duplicate gateway entry is removed. Installer packages now publish the streaming-ingest, inbound-webhook and secure site-to-site ports the product needs; these were missing, so those features could not work on an installed system. Windows upgrades keep the existing encryption key, so stored integration credentials remain readable. Not yet included: processor and memory monitoring of the host machine. This release adds one database column; existing cameras, zones, users and recordings are preserved. Multi-arch amd64 and arm64 (index sha256:358436bc). Recommended upgrade: apply the online update or re-run the installer package."
+  "release_notes": "v3.0.78: Virtual Button pages for external VMS embedding - each virtual-button widget can mint a no-login page URL (plain HTTP, token-secured) for use as a Web Page object in NX Witness and similar consoles; buttons look and behave exactly like the dashboard widget, with per-button token rotation and a whole-page revoke. Alert Manager manual device registration is restored (adding another siren failed in 3.0.77). The video codec indicator and playback routing now follow the stream actually being played, not the camera's main track. Manual RTSP camera add no longer freezes silently at Adding... (defect present since 3.0.63); the dialog reports failures and times out honestly. The default update endpoint moved to the ICLab Technologies organization; the previous endpoint is served again for existing installations. Images are published to ghcr.io/iclabtech and the previous registry namespace. This release adds two database tables and two columns; existing cameras, zones, users and recordings are preserved. Multi-arch amd64 and arm64. Recommended upgrade: apply the online update or re-run the installer package."
 }
