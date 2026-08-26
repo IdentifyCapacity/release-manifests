@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+  "target_app": "iclab-platform",
+  "package_type": "bundle",
+  "platform": "any",
+  "version": "3.0.77",
+  "channel": "dev",
+  "released_at": "2026-08-20T11:45:00Z",
+  "min_from_version": "3.0.0",
+  "min_updater_version": "3.0.75",
+  "changelog_url": "https://identifycapacity.github.io/release-manifests/changelog/3.0.77.html",
+  "critical_security": false,
+  "payload_refs": [],
+  "components": [
+    {
+      "name": "iclab-platform",
+      "service": null,
+      "files": "ghcr.io/identifycapacity/iclab-platform:3.0.77",
+      "install_target": "docker://iclab-platform"
+    }
+  ],
+  "db_migrations": true,
+  "rollback_supported": true,
+  "estimated_size_mb": 800,
+  "release_notes": "v3.0.77: When something stops working, ICLab now says so. Deterrents that resolve no devices are recorded as failures naming the camera and the reason, instead of reporting success over a no-op - the cause of sirens and floodlights that appeared to fire but did nothing. Zone-aware alerts now resolve their devices during the grace period, and the whole deterrent set is dispatched as one burst. Host disk pressure and camera clock drift now reach the admin messenger and, where email is configured, arrive by email. Watchdog notifications appear as readable sentences rather than raw technical data. Support bundles now capture the log that carries an ingest failure, so it is visible without shell access. Ubiquiti Protect gateways let you choose exactly which devices to import, and a duplicate gateway entry is removed. Installer packages now publish the streaming-ingest, inbound-webhook and secure site-to-site ports the product needs; these were missing, so those features could not work on an installed system. Windows upgrades keep the existing encryption key, so stored integration credentials remain readable. Not yet included: processor and memory monitoring of the host machine. This release adds one database column; existing cameras, zones, users and recordings are preserved. Multi-arch amd64 and arm64 (index sha256:358436bc). Recommended upgrade: apply the online update or re-run the installer package.",
+  "_note": "dev channel - INTERNAL test-bed only. v3.0.76 Recording Toolbox, RE-SPUN 2026-08-16 to fix BUG-15 (unbounded diagnostic trace file). Index sha256:6c8c74bf, superseding sha256:5a8b2216. Same version number and same image tag by operator direction; the image behind the tag changed. Channel ruled INTERNAL by the operator (conditional; customer once the open recommendations clear).",
+  "changelog": "v3.0.76 - Recording Viewer Toolbox: bind, seek, play and export recorded footage from the dashboard."
+}
